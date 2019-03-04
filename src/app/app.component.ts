@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MenuModule} from 'primeng/menu';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lojas-frontend';
+  items: MenuItem[];
+
+  ngOnInit() {
+    this.items = [
+        {label: 'New', icon: 'pi pi-fw pi-plus'},
+        {label: 'Open', icon: 'pi pi-fw pi-download'},
+        {label: 'Undo', icon: 'pi pi-fw pi-refresh'}
+    ];
+}
 }
